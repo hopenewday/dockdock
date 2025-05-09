@@ -2,9 +2,9 @@
 set -e
 
 echo "🔓 Releasing any stuck migration lock…"
-# ← Replace the yarn call with Ghost-CLI’s wrapper:
-ghost run knex-migrator unlock
+# run migrator as the unprivileged 'node' user
+su-exec node ghost run knex-migrator unlock
 
 echo "🚀 Starting Ghost in the foreground…"
-# ← Use exec so signals (SIGTERM/SIGINT) are forwarded correctly:
-exec ghost start --no-daemon
+# exec so PID 1 is Ghost; also run as 'node'
+exec su-exec node ghost start --no-daemon
