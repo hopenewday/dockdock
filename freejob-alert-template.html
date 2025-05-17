@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeJobAlert Style Template</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        /* Header Styles */
+        .header {
+            background-color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .logo {
+            float: left;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .top-nav {
+            float: right;
+            margin-top: 10px;
+        }
+        
+        .top-nav a {
+            margin-left: 15px;
+            font-size: 14px;
+        }
+        
+        /* Main Navigation */
+        .main-nav {
+            background-color: #0056b3;
+            margin-bottom: 15px;
+        }
+        
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .main-nav li {
+            padding: 0;
+        }
+        
+        .main-nav a {
+            color: #fff;
+            padding: 10px 15px;
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .main-nav a:hover {
+            background-color: #00437e;
+        }
+        
+        /* Category Navigation */
+        .category-nav {
+            background-color: #e6e6e6;
+            margin-bottom: 15px;
+        }
+        
+        .category-nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .category-nav li {
+            padding: 0;
+        }
+        
+        .category-nav a {
+            color: #333;
+            padding: 8px 15px;
+            display: block;
+            font-size: 13px;
+        }
+        
+        .category-nav a:hover {
+            background-color: #d1d1d1;
+        }
+        
+        /* Layout Structure */
+        .page-wrapper {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar {
+            width: 240px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-right: 15px;
+        }
+        
+        .main-content {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-menu h3 {
+            background-color: #0074cc;
+            color: #fff;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        
+        .sidebar-menu ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-menu li {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar-menu li a {
+            padding: 8px 5px;
+            display: block;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .sidebar-menu li a:hover {
+            background-color: #f5f5f5;
+            color: #0066cc;
+        }
+        
+        .sidebar-menu li a:before {
+            content: "➤";
+            color: #0074cc;
+            margin-right: 8px;
+            font-size: 10px;
+        }
+        
+        /* Content Section Styles */
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section-header {
+            background-color: #0074cc;
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px 4px 0 0;
+        }
+        
+        .section-content {
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        /* Updates Section */
+        .updates-section .section-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .update-item {
+            width: 100%;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .update-item:last-child {
+            border-bottom: none;
+        }
+        
+        .update-date {
+            color: #777;
+            font-size: 12px;
+        }
+        
+        /* Multi-column Sections */
+        .columns-container {
+            display: flex;
+            margin: 0 -10px;
+        }
+        
+        .column {
+            flex: 1;
+            padding: 0 10px;
+        }
+        
+        .column-header {
+            background-color: #0074cc;
+            color: #fff;
+            padding: 8px 10px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 4px 4px 0 0;
+            text-align: center;
+        }
+        
+        .column-content {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 0 0 4px 4px;
+            min-height: 200px;
+        }
+        
+        /* Job List Styles */
+        .job-list {
+            list-style: none;
+        }
+        
+        .job-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .job-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .job-list a {
+            display: block;
+            font-size: 13px;
+        }
+        
+        .job-date {
+            color: #777;
+            font-size: 12px;
+        }
+        
+        /* View More Button */
+        .view-more {
+            display: block;
+            background-color: #ff9800;
+            color: #fff;
+            text-align: center;
+            padding: 8px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .view-more:hover {
+            background-color: #f57c00;
+        }
+        
+        /* Footer Styles */
+        .footer {
+            background-color: #2b2b2b;
+            color: #fff;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            margin: 0 15px;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            text-align: center;
+            color: #aaa;
+            font-size: 12px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .page-wrapper {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .columns-container {
+                flex-direction: column;
+            }
+            
+            .column {
+                margin-bottom: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-nav ul {
+                flex-direction: column;
+            }
+            
+            .main-nav a {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container clearfix">
+            <div class="logo">
+                <a href="#">
+                    <img src="/api/placeholder/200/40" alt="FreeJobAlert Logo">
+                </a>
+            </div>
+            <div class="top-nav">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#">Government Jobs</a></li>
+                <li><a href="#">Bank Jobs</a></li>
+                <li><a href="#">Railway Jobs</a></li>
+                <li><a href="#">Police Jobs</a></li>
+                <li><a href="#">Teaching Jobs</a></li>
+                <li><a href="#">Engineering Jobs</a></li>
+                <li><a href="#">Defence Jobs</a></li>
+                <li><a href="#">Nursing Jobs</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Category Navigation -->
+    <nav class="category-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#">10th Pass Jobs</a></li>
+                <li><a href="#">12th Pass Jobs</a></li>
+                <li><a href="#">Graduate Jobs</a></li>
+                <li><a href="#">Post Graduate Jobs</a></li>
+                <li><a href="#">ITI Jobs</a></li>
+                <li><a href="#">Diploma Jobs</a></li>
+                <li><a href="#">Apprentice Jobs</a></li>
+                <li><a href="#">Private Jobs</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- WhatsApp Alert Banner -->
+    <div class="container" style="margin-bottom:15px; text-align:center;">
+        <div style="background-color:#25d366; padding:10px; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <img src="/api/placeholder/24/24" alt="WhatsApp Icon" style="margin-right:10px;">
+            <span style="color:#fff; font-weight:bold;">Get WhatsApp Updates!</span>
+        </div>
+    </div>
+    
+    <!-- Main Content Layout -->
+    <div class="container">
+        <div class="page-wrapper">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-menu">
+                    <h3>Popular Categories</h3>
+                    <ul>
+                        <li><a href="#">Latest Notifications</a></li>
+                        <li><a href="#">Employment News</a></li>
+                        <li><a href="#">Results</a></li>
+                        <li><a href="#">Admit Cards</a></li>
+                        <li><a href="#">Answer Keys</a></li>
+                        <li><a href="#">Syllabus</a></li>
+                        <li><a href="#">Important Recruitment</a></li>
+                        <li><a href="#">Latest Answer Keys</a></li>
+                    </ul>
+                    
+                    <h3>Job Type</h3>
+                    <ul>
+                        <li><a href="#">All Government Jobs</a></li>
+                        <li><a href="#">Bank Jobs</a></li>
+                        <li><a href="#">SSC Jobs</a></li>
+                        <li><a href="#">Police Jobs</a></li>
+                        <li><a href="#">Defence Jobs</a></li>
+                        <li><a href="#">Railway Jobs</a></li>
+                        <li><a href="#">Teaching Jobs</a></li>
+                        <li><a href="#">Engineering Jobs</a></li>
+                    </ul>
+                </div>
+            </aside>
+            
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- New Updates Section -->
+                <section class="section updates-section">
+                    <div class="section-header">New Updates</div>
+                    <div class="section-content">
+                        <div class="update-item">
+                            <a href="#">UPSC Civil Services Notification 2023 - Apply for IAS, IPS, IFS Posts</a>
+                            <div class="update-date">Updated: May 10, 2023</div>
+                        </div>
+                        <div class="update-item">
+                            <a href="#">SBI PO Recruitment 2023 - Apply for 2000+ Probationary Officer Posts</a>
+                            <div class="update-date">Updated: May 8, 2023</div>
+                        </div>
+                        <div class="update-item">
+                            <a href="#">SSC CGL Notification 2023 - Combined Graduate Level Examination</a>
+                            <div class="update-date">Updated: May 5, 2023</div>
+                        </div>
+                        <div class="update-item">
+                            <a href="#">IBPS RRB Notification 2023 - Apply for Officer Scale I, II, III & Office Assistant</a>
+                            <div class="update-date">Updated: May 2, 2023</div>
+                        </div>
+                        <div class="update-item">
+                            <a href="#">Railway Recruitment 2023 - Apply for 13,000+ Posts</a>
+                            <div class="update-date">Updated: April 30, 2023</div>
+                        </div>
+                        
+                        <a href="#" class="view-more">View More</a>
+                    </div>
+                </section>
+                
+                <!-- Jobs by Education Section -->
+                <section class="section">
+                    <div class="section-header">Jobs by Education</div>
+                    <div class="section-content">
+                        <div class="columns-container">
+                            <div class="column">
+                                <ul class="job-list">
+                                    <li><a href="#">10th Pass Jobs</a></li>
+                                    <li><a href="#">12th Pass Jobs</a></li>
+                                    <li><a href="#">Graduate Jobs</a></li>
+                                    <li><a href="#">Post Graduate Jobs</a></li>
+                                    <li><a href="#">B.Tech/Engineering Jobs</a></li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul class="job-list">
+                                    <li><a href="#">ITI Jobs</a></li>
+                                    <li><a href="#">Diploma Jobs</a></li>
+                                    <li><a href="#">B.Ed Jobs</a></li>
+                                    <li><a href="#">Medical Jobs</a></li>
+                                    <li><a href="#">Law Jobs</a></li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul class="job-list">
+                                    <li><a href="#">MBA Jobs</a></li>
+                                    <li><a href="#">MCA Jobs</a></li>
+                                    <li><a href="#">Any Graduate Jobs</a></li>
+                                    <li><a href="#">Any Degree Jobs</a></li>
+                                    <li><a href="#">Ph.D Jobs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" class="view-more">View More</a>
+                    </div>
+                </section>
+                
+                <!-- Job Notifications, Admit Card, Results Section -->
+                <section class="section">
+                    <div class="columns-container">
+                        <!-- Job Notifications Column -->
+                        <div class="column">
+                            <div class="column-header">Job Notifications</div>
+                            <div class="column-content">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">SSC CGL Notification 2023</a>
+                                        <div class="job-date">May 5, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">IBPS PO Notification 2023</a>
+                                        <div class="job-date">May 3, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">SBI Clerk Notification 2023</a>
+                                        <div class="job-date">May 1, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">UPSC Civil Services 2023</a>
+                                        <div class="job-date">April 28, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Indian Army Recruitment 2023</a>
+                                        <div class="job-date">April 25, 2023</div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="view-more">View More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Admit Card Column -->
+                        <div class="column">
+                            <div class="column-header">Admit Card</div>
+                            <div class="column-content">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">IBPS Clerk Admit Card 2023</a>
+                                        <div class="job-date">May 8, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">SSC CHSL Admit Card 2023</a>
+                                        <div class="job-date">May 6, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">UPSC ESE Admit Card 2023</a>
+                                        <div class="job-date">May 4, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">RRB NTPC Admit Card 2023</a>
+                                        <div class="job-date">May 2, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">IBPS RRB Admit Card 2023</a>
+                                        <div class="job-date">April 30, 2023</div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="view-more">View More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Results Column -->
+                        <div class="column">
+                            <div class="column-header">Results</div>
+                            <div class="column-content">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">SSC MTS Result 2023</a>
+                                        <div class="job-date">May 7, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">IBPS Clerk Result 2023</a>
+                                        <div class="job-date">May 5, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">UPSC CDS Result 2023</a>
+                                        <div class="job-date">May 3, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">SSC JE Result 2023</a>
+                                        <div class="job-date">May 1, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">RRB Group D Result 2023</a>
+                                        <div class="job-date">April 28, 2023</div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="view-more">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Education Section -->
+                <section class="section">
+                    <div class="section-header">EDUCATION</div>
+                    <div class="section-content">
+                        <div class="section-header" style="background-color: #0088cc; margin-bottom: 15px;">New Edu Updates</div>
+                        <div class="columns-container">
+                            <div class="column">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">Delhi University Admission 2023</a>
+                                        <div class="job-date">May 10, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Mumbai University Exam Schedule 2023</a>
+                                        <div class="job-date">May 8, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">JEE Main 2023 Result Announced</a>
+                                        <div class="job-date">May 5, 2023</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">NEET 2023 Exam Date Announced</a>
+                                        <div class="job-date">May 9, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">CUET 2023 Application Process</a>
+                                        <div class="job-date">May 7, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">UP Board Result 2023 Date</a>
+                                        <div class="job-date">May 4, 2023</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">Calcutta University Time Table 2023</a>
+                                        <div class="job-date">May 6, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">CBSE Class 12 Result 2023</a>
+                                        <div class="job-date">May 3, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Karnataka CET Exam 2023</a>
+                                        <div class="job-date">May 1, 2023</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="#" class="view-more">View More</a>
+                    </div>
+                </section>
+                
+                <!-- Education Sections -->
+                <section class="section">
+                    <div class="columns-container">
+                        <!-- Edu Notifications Column -->
+                        <div class="column">
+                            <div class="column-header">Edu Notifications</div>
+                            <div class="column-content">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">CBSE Exam Date Sheet 2023</a>
+                                        <div class="job-date">May 8, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">UGC NET Exam Schedule 2023</a>
+                                        <div class="job-date">May 6, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bihar Board Exam 2023</a>
+                                        <div class="job-date">May 4, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">NEET UG Application 2023</a>
+                                        <div class="job-date">May 2, 2023</div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="view-more">View More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Edu Admit Cards Column -->
+                        <div class="column">
+                            <div class="column-header">Edu Admit Cards</div>
+                            <div class="column-content">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">NEET Admit Card 2023</a>
+                                        <div class="job-date">May 7, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">JEE Advanced Admit Card 2023</a>
+                                        <div class="job-date">May 5, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">CUET PG Admit Card 2023</a>
+                                        <div class="job-date">May 3, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">GATE Admit Card 2023</a>
+                                        <div class="job-date">May 1, 2023</div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="view-more">View More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Edu Results Column -->
+                        <div class="column">
+                            <div class="column-header">Edu Results</div>
+                            <div class="column-content">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">CBSE Class 10 Result 2023</a>
+                                        <div class="job-date">May 9, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">JEE Main Result 2023</a>
+                                        <div class="job-date">May 7, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Karnataka SSLC Result 2023</a>
+                                        <div class="job-date">May 5, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Maharashtra HSC Result 2023</a>
+                                        <div class="job-date">May 3, 2023</div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="view-more">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- State Job Section -->
+                <section class="section">
+                    <div class="columns-container">
+                        <!-- State Job Notifications Column -->
+                        <div class="column">
+                            <div class="column-header">State Job Notifications</div>
+                            <div class="column-content">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">UP Police Recruitment 2023</a>
+                                        <div class="job-date">May 10, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Maharashtra TET 2023</a>
+                                        <div class="job-date">May 8, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Bihar STET 2023</a>
+                                        <div class="job-date">May 6, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Rajasthan Police Constable 2023</a>
+                                        <div class="job-date">May 4, 2023</div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="view-more">View More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Answer Keys Column -->
+                        <div class="column">
+                            <div class="column-header">Answer Keys</div>
+                            <div class="column-content">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">SSC CHSL Answer Key 2023</a>
+                                        <div class="job-date">May 9, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">UPSC Prelims Answer Key 2023</a>
+                                        <div class="job-date">May 7, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">CTET Answer Key 2023</a>
+                                        <div class="job-date">May 5, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">RRB NTPC Answer Key 2023</a>
+                                        <div class="job-date">May 3, 2023</div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="view-more">View More</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Syllabus Column -->
+                        <div class="column">
+                            <div class="column-header">Syllabus</div>
+                            <div class="column-content">
+                                <ul class="job-list">
+                                    <li>
+                                        <a href="#">SSC CGL Syllabus 2023</a>
+                                        <div class="job-date">May 8, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">UPSC CSE Syllabus 2023</a>
+                                        <div class="job-date">May 6, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">IBPS PO Syllabus 2023</a>
+                                        <div class="job-date">May 4, 2023</div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Railway RRB NTPC Syllabus 2023</a>
+                                        <div class="job-date">May 2, 2023</div>
+                                    </li>
+                                </ul>
+                                <a href="#" class="view-more">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Disclaimer</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="copyright">
+                Copyright © 2023 FreeJobAlert.com - All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for AJAX functionality (to be implemented) -->
+    <script>
+        // This script will be used to implement AJAX loading
+        document.addEventListener('DOMContentLoaded', function() {
+            // Store the current page state
+            let currentPage = window.location.pathname;
+            
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            // Add click event listeners to all navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetHref = this.getAttribute('href').substring(1);
+                    
+                    // Only proceed if it's a different page
+                    if (targetHref !== currentPage) {
+                        loadPage(targetHref);
+                    }
+                });
+            });
+            
+            // Function to load page content via AJAX
+            function loadPage(page) {
+                // Show loading indicator
+                showLoader();
+                
+                // In a real implementation, we would make an AJAX request here
+                // This is a simplified example
+                fetch(`/pages/${page}.html`)
+                    .then(response => response.text())
+                    .then(html => {
+                        // Update content area
+                        document.querySelector('.main-content').innerHTML = html;
+                        
+                        // Update browser history
+                        window.history.pushState({page}, `${page} - FreeJobAlert`, `/${page}`);
+                        
+                        // Update current page tracker
+                        currentPage = page;
+                        
+                        // Hide loading indicator
+                        hideLoader();
+                    })
+                    .catch(error => {
+                        console.error('Error loading page:', error);
+                        hideLoader();
+                    });
+            }
+            
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function(event) {
+                if (event.state && event.state.page) {
+                    loadPage(event.state.page);
+                }
+            });
+            
+            // Loading indicator functions
+            function showLoader() {
+                // Create loader if it doesn't exist
+                if (!document.getElementById('page-loader')) {
+                    const loader = document.createElement('div');
+                    loader.id = 'page-loader';
+                    loader.innerHTML = 'Loading...';
+                    loader.style.position = 'fixed';
+                    loader.style.top = '50%';
+                    loader.style.left = '50%';
+                    loader.style.transform = 'translate(-50%, -50%)';
+                    loader.style.padding = '15px 30px';
+                    loader.style.background = 'rgba(0, 0, 0, 0.7)';
+                    loader.style.color = '#fff';
+                    loader.style.borderRadius = '5px';
+                    loader.style.zIndex = '9999';
+                    document.body.appendChild(loader);
+                } else {
+                    document.getElementById('page-loader').style.display = 'block';
+                }
+            }
+            
+            function hideLoader() {
+                const loader = document.getElementById('page-loader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
